@@ -1,0 +1,8 @@
+.app-header {
+    text-transform: uppercase;
+    font-size: 40px;
+    margin: 32px 0;
+    color: rgb(230, 230, 217);
+    z-index: 1;
+    text-align: center;
+  }

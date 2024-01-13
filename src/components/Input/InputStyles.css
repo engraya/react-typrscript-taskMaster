@@ -1,0 +1,46 @@
+.input-form {
+    display: flex;
+    width: 90%;
+    position: relative;
+    align-items: center;
+}
+
+.input__box {
+    width: 100%;
+    border-radius: 10px;
+    padding: 2px 30px;
+    font-size: 22px;
+    border: 2px;
+    transition: none;
+    box-shadow: inset 0 0 5px rgb(90, 88, 88);
+}
+.input__box:focus {
+    box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.5);
+    outline: none;
+} 
+
+.input_submit {
+    /* position: absolute; */
+    width: 35px;
+    height: 35px;
+    margin: 12px;
+    border-radius: 25px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    right: 0px;
+    border: none;
+    font-size: 12px;
+    background-color: cadetblue;
+    color: azure;
+    transition: 0.2s all;
+    box-shadow: 0 0 10px black;
+}
+
+.input_submit:hover {
+    background-color: rgb(59, 68, 65);
+}
+.input_submit:active {
+    transform: scale(0.6);
+    box-shadow: 0 0 5px black;
+}

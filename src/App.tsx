@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import { FC } from 'react';
+import { useState, FormEvent } from 'react';
 import './App.css';
+import Input from './components/Input/Input';
+import AppHeader from './components/AppHeader/AppHeader';
+import { TaskModelInterface } from './Model/taskModel';
 
-function App() {
+const App : FC = () => {
+  const [task, setTask] = useState<string>("");
+  const [tasks, setTasks] = useState<TaskModelInterface[]>([]);
+
+  const handleAddTask = (e: FormEvent) => {
+    e.preventDefault();
+    if (task) {
+      setTasks([...tasks, { id : Date.now(), taskTitle : task, isCompleted : false}]);
+      setTask("")
+    }
+
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppHeader/>
+      <Input task={task} setTask={setTask} handleAddTask={handleAddTask}/>
     </div>
   );
-}
+} 
 
 export default App;
