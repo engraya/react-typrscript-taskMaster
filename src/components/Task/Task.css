@@ -1,0 +1,47 @@
+.taks__single {
+    display: flex;
+    width: 30%;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 12px;
+    background-color: rgb(105, 114, 97);
+}
+.tasks__single--text {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    font-size: 18px;
+}
+
+.tasks__single--text:focus {
+    outline: none;
+}
+
+.task__single--input {
+    
+}
+
+.icon {
+    margin-left: 10px;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 1200px) {
+    .taks__single {
+        width: 40%;
+    }
+}
+@media (max-width: 700px) {
+    .input-form {
+        width: 95%;
+    }
+    .tasks {
+        width : 95%
+    }
+    .taks__single {
+        width: 100%;
+    }
+}
+ 

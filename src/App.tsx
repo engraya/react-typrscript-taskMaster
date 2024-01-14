@@ -5,6 +5,7 @@ import './App.css';
 import Input from './components/Input/Input';
 import AppHeader from './components/AppHeader/AppHeader';
 import { TaskModelInterface } from './Model/taskModel';
+import TodoList from './components/TodoList/TodoList';
 
 const App : FC = () => {
   const [task, setTask] = useState<string>("");
@@ -13,7 +14,7 @@ const App : FC = () => {
   const handleAddTask = (e: FormEvent) => {
     e.preventDefault();
     if (task) {
-      setTasks([...tasks, { id : Date.now(), taskTitle : task, isCompleted : false}]);
+      setTasks([...tasks, { id : Date.now(), title : task, isCompleted : false}]);
       setTask("")
     }
 
@@ -23,6 +24,7 @@ const App : FC = () => {
     <div className="App">
       <AppHeader/>
       <Input task={task} setTask={setTask} handleAddTask={handleAddTask}/>
+      <TodoList tasks={tasks} setTasks={setTasks}/>
     </div>
   );
 } 
